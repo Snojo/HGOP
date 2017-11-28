@@ -1,2 +1,4 @@
 # HGOP
-HGOP - Þriggja Vikna
+HGOP - Þriggja Vikna áfangi
+
+## Vika 1

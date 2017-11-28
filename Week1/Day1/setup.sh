@@ -36,7 +36,7 @@ case $response in [yY][eE][sS]|[yY]|[jJ]|'')
     echo
     res2=$(date +%s.%N)
     echo "Finished on: " | date
-    #This is all to calculate time. using the
+    #This is all to calculate and display time in a pretty way :)
     dt=$(echo "$res2 - $res1" | bc)
     dd=$(echo "$dt/86400" | bc)
     dt2=$(echo "$dt-86400*$dd" | bc)
