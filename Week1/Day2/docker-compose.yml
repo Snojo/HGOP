@@ -1,7 +1,7 @@
 version: "2"
 services:
   my_page_counter_app:
-    image: username/repo:tag
+    image: snojo/week1:day2
     ports:
      - "3000:3000"
     links:
