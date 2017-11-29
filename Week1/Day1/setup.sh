@@ -33,6 +33,8 @@ case $response in [yY][eE][sS]|[yY]|[jJ]|'')
     sudo apt-get install -y git
     sudo apt-get install -y vim
     sudo apt-get install -y python-pip
+    sudo apt-get install -y terminator
+    
     ############### Ends Here ########################
     #We're Finished!
     echo

@@ -1,6 +1,7 @@
 #!/bin/sh
 
 INSTANCE_DIR="ec2_instance"
+SECURITY_GROUP_NAME=$1
 if [ -d "${INSTANCE_DIR}" ]; then
     exit
 fi
