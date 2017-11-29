@@ -24,7 +24,7 @@ case $response in [yY][eE][sS]|[yY]|[jJ]|'')
         sudo apt-get -y install ubuntu-make
 
         sudo umake ide visual-studio-code
-        sudo apt-get install -y quake13241234
+        
         ;;
         *) #Else
         ;;
@@ -32,6 +32,7 @@ case $response in [yY][eE][sS]|[yY]|[jJ]|'')
     ############### Real install starts here ################## 
     sudo apt-get install -y git
     sudo apt-get install -y vim
+    sudo apt-get install -y python-pip
     ############### Ends Here ########################
     #We're Finished!
     echo
