@@ -49,7 +49,7 @@ app.post('/items/:name', (req, res) => {
   const name = req.body
   const time = Date.now()
   
-    pg.connect(conString, function (err, client, done) {
+    database.connect(conString, function (err, client, done) {
       if (err) {
         // pass the error to the express error handler
         return next(err)
