@@ -2,10 +2,11 @@
 {
 #set -e doesn't work.... how to log pls
 echo "############################################################################################################"
-echo "Hello " | echo $USER
+echo "Hello $USER"
 echo "This is your go-to installation script for everything you want to install!"
-echo "You are currently running on " | uname -a
-read -p "Would you like to install optional software? (VSCode, Guake) [Y/n] " response2
+echo "You are currently running on "
+uname -a
+read -p "Would you like to install optional software? (VSCode, Terminator) [Y/n] " response2
 read -p "Are you ready to start? [Y/n] " response
 
 #The if statment if you want to continue or not.
@@ -24,6 +25,7 @@ case $response in [yY][eE][sS]|[yY]|[jJ]|'')
         sudo apt-get -y install ubuntu-make
 
         sudo umake ide visual-studio-code
+        sudo apt-get install -y terminator
         
         ;;
         *) #Else
@@ -33,7 +35,8 @@ case $response in [yY][eE][sS]|[yY]|[jJ]|'')
     sudo apt-get install -y git
     sudo apt-get install -y vim
     sudo apt-get install -y python-pip
-    sudo apt-get install -y terminator
+    sudo apt-get install -y node
+
     
     ############### Ends Here ########################
     #We're Finished!
