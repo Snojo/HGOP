@@ -11,8 +11,8 @@ services:
     image: redis
   my_postgres_container:
     restart: always
-    image: snojo/postgresql:9.6
+    image: postgres
     environment: 
-      - POSTGRES_DB
-      - POSTGRES_USER
-      - POSTGRES_PASSWORD
+      - POSTGRES_DB: HGOP
+      - POSTGRES_USER: admin
+      - POSTGRES_PASSWORD: admin

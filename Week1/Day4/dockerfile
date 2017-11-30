@@ -1,0 +1,15 @@
+FROM node:carbon
+
+#set working directory to /code
+WORKDIR /code
+
+#We're copying pacakge.json with the name package.json
+COPY package.json package.json
+#We're copying app.js as app.js
+COPY app.js app.js
+
+#Run npm install
+RUN npm install
+
+#run $node app.js
+CMD node app.js

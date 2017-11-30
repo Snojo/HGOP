@@ -1,5 +1,6 @@
 const express = require('express');
 const redis = require('redis');
+const database = require(',/database');
 
 var app = express();
 var client = redis.createClient(6379, 'my_redis_container', {
