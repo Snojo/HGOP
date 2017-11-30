@@ -12,9 +12,9 @@ var app = express();
 });*/
 
 
-app.get('/', (req, res) => res.status(200).send('hello'));
+app.get('/', (req, res) => res.status(200).send('hello wooorld!!!'));
 
-/*
+
 // Should return an array of 10 item names.
 app.get('/items', (req, res) => {
   //database.get();
@@ -66,6 +66,6 @@ app.post('/items/:name', (req, res) => {
       })
     })
 });
-*/
+
 //app.listen(3000);
 app.listen(PORT, () => console.log(`Server running on ${PORT}`));

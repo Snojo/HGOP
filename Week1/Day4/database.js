@@ -26,7 +26,7 @@ module.exports = {
     // param name: item name.
     // param insertDate: item insertdate.
     // param onInsert: on item insert callback method.
-   /* insert: (name, insertDate, onInsert) => {
+    insert: (name, insertDate, onInsert) => {
         var client = getClient();
         client.connect(() => {
             client.query('INSERT INTO Item VALUES(Name, InsertDate);', (err) => {
@@ -35,7 +35,7 @@ module.exports = {
             });
         });
     },
-    */
+    
     // Should get the top 10 items sorted by inserteddate descending.
     // param onGet: on items get callback method.
     get: (onGet) => {
