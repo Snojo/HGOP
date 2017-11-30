@@ -9,12 +9,12 @@ docker build -t ${IMAGENAME} .
 
 # Get the commit id
 COMMIT_ID=$(git rev-parse HEAD)
-echo "COMMIT_ID=${COMMIT_ID}" > ./dockerEnvironment.env
+echo "COMMIT_ID=${COMMIT_ID}" > ./.env
 
 # Tag your docker image
-#docker tag ${IMAGENAME} ${NAME}/${SECOND}:${COMMIT_ID}
-docker tag ${IMAGENAME} ${NAME}/${SECOND}
+docker tag ${IMAGENAME} ${NAME}/${SECOND}:${COMMIT_ID}
+#docker tag ${IMAGENAME} ${NAME}/${SECOND}
 # Push to docker hub
-#docker push ${NAME}/${SECOND}:${COMMIT_ID}
-docker push ${NAME}/${SECOND}
+docker push ${NAME}/${SECOND}:${COMMIT_ID}
+#docker push ${NAME}/${SECOND}
 

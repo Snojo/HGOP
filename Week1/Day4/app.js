@@ -12,7 +12,7 @@ var app = express();
 });*/
 
 
-server.get('/', (req, res) => res.status(200).send('hello'));
+app.get('/', (req, res) => res.status(200).send('hello'));
 
 /*
 // Should return an array of 10 item names.
