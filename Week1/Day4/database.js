@@ -5,7 +5,7 @@ function getClient() {
         host: my_postgres_container,
         user: admin,
         password: admin,
-        database: hgop
+        database: my_postgres_container
     });
 }
 

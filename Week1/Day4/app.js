@@ -1,6 +1,8 @@
 const express = require('express');
-const redis = require('redis');
+//const redis = require('redis');
 const database = require('./database');
+const PORT = 3000;
+
 var msg = "I Made IT!";
 var app = express();
 /*var client = database.createClient(6379, 'my_postgres_container', {
@@ -9,24 +11,10 @@ var app = express();
   },
 });*/
 
-app.get('/', (req, res) => {
 
-  console.log(msg);
-  res.send(msg);
-  /*if (client.connected) {
-    client.incr('page_load_count', (error, reply) => {
-      var msg = 'Connected to redis, you are awesome :D' + 'Page loaded ' + reply + ' times!';
-      res.statusCode = 200;
-      res.send(msg);
-      return;
-    });
-  } else {
-    var msg = "Failed to connect to redis :'(";
-    res.statusCode = 500;
-    res.send(msg);
-  }*/
-});
+server.get('/', (req, res) => res.status(200).send('hello'));
 
+/*
 // Should return an array of 10 item names.
 app.get('/items', (req, res) => {
   //database.get();
@@ -54,6 +42,7 @@ app.get('/items', (req, res) => {
   });
 
 });
+
 const users = []
 // Should add an item to the database.
 app.post('/items/:name', (req, res) => {
@@ -77,5 +66,6 @@ app.post('/items/:name', (req, res) => {
       })
     })
 });
-
-app.listen(3000);
+*/
+//app.listen(3000);
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));
