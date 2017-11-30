@@ -2,10 +2,10 @@ const { Client } = require('pg');
 
 function getClient() {
     return new Client({
-        host: day4_my_postgres_container_1,
-        user: admin,
-        password: admin,
-        database: hgop
+        host: 'my_postgres_container',
+        user: 'admin',
+        password: 'admin',
+        database: 'hgop'
     });
 }
 
