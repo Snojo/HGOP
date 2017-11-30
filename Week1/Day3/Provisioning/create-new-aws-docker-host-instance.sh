@@ -28,3 +28,4 @@ aws ec2 wait --region eu-west-1 instance-running --instance-ids ${INSTANCE_ID}
 export INSTANCE_PUBLIC_NAME=$(aws ec2 describe-instances --instance-ids ${INSTANCE_ID} --query "Reservations[*].Instances[*].PublicDnsName" --output=text)
 echo ${INSTANCE_PUBLIC_NAME} > ./ec2_instance/instance-public-name.txt
 
+sh ./update-running-containers.sh

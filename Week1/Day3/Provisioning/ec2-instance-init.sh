@@ -11,11 +11,3 @@ sudo service docker start
 sudo usermod -a -G docker ec2-user
 echo "Installations done"
 touch ec2-init-done.markerfile
-
-
-while ! test -e 'ec2-init-done.markerfile'
-do
-    sleep 2
-done
-
-echo "Create reached it's end!"
