@@ -1,7 +1,7 @@
 const express = require('express');
 const redis = require('redis');
 const database = require('./database');
-
+var msg = "I Made IT!";
 var app = express();
 /*var client = database.createClient(6379, 'my_postgres_container', {
   retry_strategy: options => {
@@ -11,8 +11,8 @@ var app = express();
 
 app.get('/', (req, res) => {
 
-  console.log("HELLO WORLD");
-  res.send("HELLO!");
+  console.log(msg);
+  res.send(msg);
   /*if (client.connected) {
     client.incr('page_load_count', (error, reply) => {
       var msg = 'Connected to redis, you are awesome :D' + 'Page loaded ' + reply + ' times!';
