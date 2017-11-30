@@ -6,7 +6,7 @@ SECURITY_GROUP_NAME=$(cat ./ec2_instance/security-group-name.txt)
 
 aws ec2 terminate-instances --instance-ids ${INSTANCE_ID}
 
-aws ec2 wait --region eu-west-1 instance-terminated --instance-ids ${INSTANCE_ID}
+aws ec2 wait --region eu-east-2 instance-terminated --instance-ids ${INSTANCE_ID}
 aws ec2 delete-security-group --group-id ${SECURITY_GROUP_ID}
 
 aws ec2 delete-key-pair --key-name ${SECURITY_GROUP_NAME}
