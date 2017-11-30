@@ -1,7 +1,7 @@
 version: "2"
 services:
   my_page_counter_app:
-    image: snojo/week1
+    image: snojo/week1:${COMMIT_ID}
     ports:
      - "3000:3000"
     links:
