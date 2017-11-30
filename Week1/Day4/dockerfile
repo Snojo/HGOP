@@ -8,6 +8,8 @@ COPY package.json package.json
 #We're copying app.js as app.js
 COPY app.js app.js
 
+COPY database.js database.js
+
 #Run npm install
 RUN npm install
 
