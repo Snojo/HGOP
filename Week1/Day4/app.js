@@ -19,16 +19,17 @@ app.get('/', (req, res) => res.status(200).send('hello wooorld!!!'));
 // Should return an array of 10 item names.
 app.get('/items', (req, res) => {
   database.get();
+  res.status(200).send("Is this even working?");
   // todo
 });
 
 // Should add an item to the database.
 app.post('/items/:name', (req, res) => {
   var name = req.params.name;
-  var date = Date.now();
-  var onInsert = "I don't know what this is";
+  var date = new Date();
 
-  database.insert(name, date, onInsert);
+
+  database.insert(name, date);
 });
 
 //app.listen(3000);

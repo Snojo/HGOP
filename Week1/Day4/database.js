@@ -26,14 +26,20 @@ module.exports = {
     // param name: item name.
     // param insertDate: item insertdate.
     // param onInsert: on item insert callback method.
-    insert: (name, insertDate, onInsert) => {
+    insert: (name, insertDate) => {
         var client = getClient();
-        const text = 'INSERT INTO users(Name, InsertDate) VALUES($1, $2) RETURNING *'
+        const text = 'INSERT INTO Item(Name, InsertDate) VALUES($1, $2) RETURNING *'
         const values = [name, insertDate]
-        
+
         client.connect(() => {
-            client.query(text, values , (err) => {
-                console.log('Data has been inserted')
+            var query = client.query(text, values , (err, res) => {
+                if (err) {
+                    console.log(err.stack)
+                  } else {
+                    console.log(res.rows[0])
+                    // { name: 'brianc', email: 'brian.m.carlson@gmail.com' }
+                  }
+               // console.log('Data has been inserted')
                 client.end(); 
                 //client.query('INSERT INTO items(text, complete) values($1, $2)',[data.text, data.complete]);           
             });
@@ -45,11 +51,25 @@ module.exports = {
     get: (onGet) => {
         var client = getClient();
         client.connect(() => {
-            client.query('SELECT * FROM Item order by Item desc limit 10;', (err) => {
-                console.log('I managed to pull max 10 items from my database')
+            var query = client.query('SELECT * FROM Item', (err,res) => {
+                if (err) {
+                    console.log(err.stack)
+                  } else {
+                    console.log(res.rows[0])
+                    // { name: 'brianc', email: 'brian.m.carlson@gmail.com' }
+                  }
+                //console.log('I managed to pull max 10 items from my database')
                 client.end();  
 
     
+            });
+            query.on("row", function (row, result) {
+                result.addRow(row);
+            });
+            
+            query.on("end", function (result) {
+                console.log(JSON.stringify(result.rows, null, "    "));
+                client.end();
             });
         });
     }
