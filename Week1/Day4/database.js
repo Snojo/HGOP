@@ -29,9 +29,10 @@ module.exports = {
     insert: (name, insertDate, onInsert) => {
         var client = getClient();
         client.connect(() => {
-            client.query('INSERT INTO Item VALUES(name, insertDate);', (err) => {
+            client.query('INSERT INTO Item VALUES(Name, InsertDate) values(name, insertDate);', (err) => {
                 console.log('Data has been inserted')
-                client.end();            
+                client.end(); 
+                //client.query('INSERT INTO items(text, complete) values($1, $2)',[data.text, data.complete]);           
             });
         });
     },
@@ -43,7 +44,9 @@ module.exports = {
         client.connect(() => {
             client.query('SELECT * FROM Item order by Item desc limit 10;', (err) => {
                 console.log('I managed to pull max 10 items from my database')
-                client.end();            
+                client.end();  
+
+    
             });
         });
     }
