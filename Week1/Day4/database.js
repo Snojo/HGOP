@@ -28,8 +28,11 @@ module.exports = {
     // param onInsert: on item insert callback method.
     insert: (name, insertDate, onInsert) => {
         var client = getClient();
+        const text = 'INSERT INTO users(Name, InsertDate) VALUES($1, $2) RETURNING *'
+        const values = [name, insertDate]
+        
         client.connect(() => {
-            client.query('INSERT INTO Item VALUES(Name, InsertDate) values(name, insertDate);', (err) => {
+            client.query(text, values , (err) => {
                 console.log('Data has been inserted')
                 client.end(); 
                 //client.query('INSERT INTO items(text, complete) values($1, $2)',[data.text, data.complete]);           
