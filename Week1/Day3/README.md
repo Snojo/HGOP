@@ -4,7 +4,7 @@ On day 3 I got to the point where I could create and delete an instance. I could
 
 Run create-new-aws-docker-host-instance, then deploy-on-instance and you can delete the instance by running destroy-instance.
 
-The url is: 
+The url is: http://ec2-18-217-134-66.us-east-2.compute.amazonaws.com/
 
 ## Setting up Amazon Web Service.
 http://docs.aws.amazon.com/AmazonECS/latest/developerguide/get-set-up-for-amazon-ecs.html

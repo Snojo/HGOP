@@ -30,14 +30,14 @@ app.get('/', (req, res) => {
 //The Pagecounter ends here.
 
 
-// Should return an array of 10 item names.
+// Should return an array of 10 item names. It calls the get method in the database.js
 app.get('/items', (req, res) => {
   database.get();
   res.status(200).send("Is this even working?");
   // todo
 });
 
-// Should add an item to the database.
+// Should add an item to the database. It calls the post method in the databasae.js
 app.post('/items/:name', (req, res) => {
   var name = req.params.name;
   var date = new Date();
