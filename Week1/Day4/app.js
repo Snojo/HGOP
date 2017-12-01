@@ -1,5 +1,5 @@
 const express = require('express');
-//const redis = require('redis');
+const redis = require('redis');
 const database = require('./database');
 const PORT = 3000;
 
