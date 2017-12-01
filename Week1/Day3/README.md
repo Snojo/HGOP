@@ -1,4 +1,10 @@
 # Setting up AWS
+## How far I got
+On day 3 I got to the point where I could create and delete an instance. I could push all my scripts to it and locally run my docker image. I had some hickups in my script that meant that I couldn't deploy automatically. I can now though, and the provision directory is the updated one. 
+
+Run create-new-aws-docker-host-instance, then deploy-on-instance and you can delete the instance by running destroy-instance.
+
+The url is: 
 
 ## Setting up Amazon Web Service.
 http://docs.aws.amazon.com/AmazonECS/latest/developerguide/get-set-up-for-amazon-ecs.html
@@ -13,15 +19,14 @@ AWS Access Key: 539209897567
 
 IAM user sign in link: https://539209897567.signin.aws.amazon.com/console 
 
-The PrivateKey is kept in .ssh under the name HGOP.pem
-To connect to your Linux instance from a computer running Mac or Linux, specify the .pem file to your SSH client with the -i option and the path to your private key. 
+The .pem key is created and stored automatically in the ec2_instance directory when that is created.
+use the ./connect.sh command to connect to your current instance.
 
 To install AWSCLI
 '''
 $ pip install awscli --upgrade --user
 '''
 
-Connecting to ip through ssh is in connect.sh script.
-EC2 instance ip; 18.216.226.42
+
 
 

@@ -1,6 +1,6 @@
 FROM node:carbon
 
-#set working directory to /code
+#set working directory of our docker image to /code
 WORKDIR /code
 
 #We're copying pacakge.json with the name package.json
@@ -8,8 +8,8 @@ COPY package.json package.json
 #We're copying app.js as app.js
 COPY app.js app.js
 
-#Run npm install
+#Run npm install on the docker image
 RUN npm install
 
-#run $node app.js
+#app.js is the entry point for node. We can technically run any command here. 
 CMD node app.js

@@ -6,3 +6,5 @@ do
 done
 
 echo "Create reached it's end!"
+
+exit

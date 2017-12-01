@@ -5,15 +5,29 @@ const PORT = 3000;
 
 var msg = "I Made IT!";
 var app = express();
-/*var client = database.createClient(6379, 'my_postgres_container', {
+
+//This is the pagecounter!
+var client = redis.createClient(6379, 'my_redis_container', {
   retry_strategy: options => {
     return;
   },
-});*/
+});
 
-// TODO: NEED TO CREATE A CONNECTION STRING.... I THINK
-
-app.get('/', (req, res) => res.status(200).send('hello wooorld!!!'));
+app.get('/', (req, res) => {
+  if (client.connected) {
+    client.incr('page_load_count', (error, reply) => {
+      var msg = 'Connected to redis, you are awesome :D' + 'Page loaded ' + reply + ' times!';
+      res.statusCode = 200;
+      res.send(msg);
+      return;
+    });
+  } else {
+    var msg = "Failed to connect to redis :'(";
+    res.statusCode = 500;
+    res.send(msg);
+  }
+});
+//The Pagecounter ends here.
 
 
 // Should return an array of 10 item names.

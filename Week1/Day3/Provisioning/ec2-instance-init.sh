@@ -11,3 +11,5 @@ sudo service docker start
 sudo usermod -a -G docker ec2-user
 echo "Installations done"
 touch ec2-init-done.markerfile
+
+exit
