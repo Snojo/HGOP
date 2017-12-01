@@ -29,7 +29,7 @@ module.exports = {
     insert: (name, insertDate, onInsert) => {
         var client = getClient();
         client.connect(() => {
-            client.query('INSERT INTO Item VALUES(Name, InsertDate);', (err) => {
+            client.query('INSERT INTO Item VALUES(name, insertDate);', (err) => {
                 console.log('Data has been inserted')
                 client.end();            
             });
