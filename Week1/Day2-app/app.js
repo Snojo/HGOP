@@ -11,7 +11,7 @@ var client = redis.createClient(6379, 'my_redis_container', {
 app.get('/', (req, res) => {
   if (client.connected) {
     client.incr('page_load_count', (error, reply) => {
-      var msg = 'Connected to redis, you are awesome :D' + 'Page loaded ' + reply + ' times!';
+      var msg = 'Connected to redis, you are awesome :D  ' + 'Page loaded ' + reply + ' times!';
       res.statusCode = 200;
       res.send(msg);
       return;
