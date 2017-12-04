@@ -1,5 +1,7 @@
 #!/bin/sh
-{
+
+exec > >(tee /var/log/user-data.log | logger -t user-data -s 2>/dev/console) 2>&1
+
 #set -e doesn't work.... how to log pls
 echo "############################################################################################################"
 echo "Hello $USER"
@@ -18,8 +20,15 @@ case $response in [yY][eE][sS]|[yY]|[jJ]|'')
     echo
     #Lets Start!
     echo "LETS GOOOOOO"
+    
+    
+    
     #This if statement is for optional software.
-    case $response2 in [yY][eE][sS]|[yY]|[jJ]|'') 
+    case $response2 in [yY][eE][sS]|[yY]|[jJ]|'')  
+        #Installing Jenkins
+        #wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+        #echo "deb https://pkg.jenkins.io/debian-stable binary/" >> /etc/apt/sources.list
+        #sudo apt-get -y install jenkins
         sudo add-apt-repository -y ppa:ubuntu-desktop/ubuntu-make
         sudo apt-get -y update
         sudo apt-get -y install ubuntu-make
@@ -27,6 +36,7 @@ case $response in [yY][eE][sS]|[yY]|[jJ]|'')
         sudo umake ide visual-studio-code
         sudo apt-get install -y terminator
         
+
         ;;
         *) #Else
         ;;
@@ -36,6 +46,8 @@ case $response in [yY][eE][sS]|[yY]|[jJ]|'')
     sudo apt-get install -y vim
     sudo apt-get install -y python-pip
     sudo apt-get install -y node
+    #sudo apt-get install -y docker
+    #sudo apt-get install -y docker-compose
 
     
     ############### Ends Here ########################
@@ -61,4 +73,3 @@ case $response in [yY][eE][sS]|[yY]|[jJ]|'')
     echo
     ;;
 esac
-} 2>&1 | tee -a log.out
