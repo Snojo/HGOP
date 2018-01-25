@@ -1,0 +1,13 @@
+Tools of the trade
+
+Elastic
+Datadog
+Jenkins
+
+Fyrir próf:
+Sjá heildarmyndina. 
+Geta útskýrt ferlið frá byrjun til enda. 
+Hugtök og tól.
+
+Prófið verður ein stór yfirlitsspurning
+og síðan nokkrar sérhæfðar.

@@ -1,7 +1,7 @@
 # Day4
 
 ## Link
-http://ec2-18-217-134-66.us-east-2.compute.amazonaws.com/
+http://ec2-18-217-134-66.eu-west-2.compute.amazonaws.com/
 
 ## Postgres
 I got postgres up and running, but my javascript isn't the best and it's not working correctly. I can insert into the database and I can Select from it, but for some reason I can't return it and display it. My curl commands just hang and yeah... don't know what's going on.
